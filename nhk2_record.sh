@@ -1,0 +1,1 @@
+(sleep 15m;echo -n q)|/usr/bin/mplayer -playlist http://mfile.akamai.com/129932/live/reflector:46056.asx -vo null -ao pcm:waveheader:fast:file=/dev/stdout -really-quiet | /usr/bin/avconv -y -i - /tmp/`date +"radiohogefuga-\%Y-\%m-\%d.mp3"`
