@@ -18,6 +18,22 @@ Command Usage
 - duration in minutes: 40, 15, ..
 - outfile default: channel-YYYY-mm-dd-HH-MM.mp3
 
+
+Depenency
+-------
+
+mplayer:  retrieve radio stream from net urls
+ffmpeg:   convert radio stream to audio(mp3) format
+
+
+Platform
+-------
+
+It was tested on following OS.
+
+- Ubuntu 14.04(LTS) (x86_64)
+- Linux Mint Petra (x86_64)
+
 Reference
 ---------
 
