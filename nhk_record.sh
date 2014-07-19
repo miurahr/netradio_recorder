@@ -81,7 +81,7 @@ esac
 
 if [ $# -ne 3 ]; then
   # use default outfile
-  OUTFILE=$1`date +"-\%Y-\%m-\%d-\%H-\%M.mp3"`
+  OUTFILE=$1`date +"-%Y-%m-%d-%H-%M.mp3"`
 else
   OUTFILE=$3
 fi
