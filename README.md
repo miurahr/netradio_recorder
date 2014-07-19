@@ -31,8 +31,8 @@ Platform
 
 It was tested on following OS.
 
-- Ubuntu 14.04(LTS) (x86_64)
-- Linux Mint Petra (x86_64)
+- Ubuntu 14.04(LTS) (x86-64)
+- Linux Mint Petra (x86-64)
 
 
 Legal notice
@@ -41,9 +41,15 @@ Legal notice
 WARNING
 
 Radio programs are protected by copyright law.
+Please refer a documents follows:
 
-http://www3.nhk.or.jp/toppage/nhk_info/copyright.html
-http://www3.nhk.or.jp/netradio/faq.html
+  http://www3.nhk.or.jp/toppage/nhk_info/copyright.html
+
+  http://www3.nhk.or.jp/netradio/faq.html
+
+
+This script is released under GPL-3 license.
+Details are shown on COPYING file.
 
 Future plan
 ----------
@@ -74,3 +80,10 @@ Blogs
 - http://www.senbero.com/?p=48
 - http://n-sanawe.com/hm/?p=12
 - http://ubuntu.futene.net/tips/radiru.html
+
+
+International Podcast from NHK
+
+You can listen international radio program online at
+
+http://www3.nhk.or.jp/nhkworld/english/radio/program/
