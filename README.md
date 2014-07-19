@@ -34,6 +34,24 @@ It was tested on following OS.
 - Ubuntu 14.04(LTS) (x86_64)
 - Linux Mint Petra (x86_64)
 
+
+Future plan
+----------
+
+=== Working with forked-daapd
+
+A Linux/FreeBSD DAAP (iTunes) media server with support
+for AirPlay devices, Apple Remote (and compatibles),
+Spotify and internet radio.
+
+  https://github.com/ejurgensen/forked-daapd
+
+=== cron runner script
+
+It parse schedule.csv file and run recorder
+and generate m3u file.
+
+
 Reference
 ---------
 
