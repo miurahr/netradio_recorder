@@ -70,7 +70,7 @@ esac
 case $2 in
 [1-9]|[1-9][0-9]|[1-9][0-9][0-9])
   # from 1 to 999
-  # no problem. pass it. 
+  DURATION=$2m
   ;;
 *)
   echo "Specified duration $2 is invalid."
@@ -88,4 +88,4 @@ fi
 MPLAYER=/usr/bin/mplayer
 MPLAYER_OPT="-vo null -ao pcm:waveheader:fast:file=/dev/stdout -really-quiet"
 AVCONV=/usr/bin/avconv
-${MPLAYER} -playlist ${RADIO_URL} ${MPLAYER_OPT} | ${AVCONV} -y -i - ${OUTFILE}
+(sleep ${DURATION}; echo -n q ) | ${MPLAYER} -playlist ${RADIO_URL} ${MPLAYER_OPT} | ${AVCONV} -y -i - ${OUTFILE}
