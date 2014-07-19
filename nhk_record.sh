@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # check argument numbers
-if [ $# -ne 2]; then
+if [ $# -ne 2 ]; then
   echo "Not enough arguments specified"
   echo "Usage:"
   echo "$0: (radio channel) (duration) [(outfile)]"
@@ -15,12 +15,12 @@ if [ $# -ne 2]; then
   exit 2
 fi
 
-if [-x /usr/bin/mplayer]; then
+if [ ! -x /usr/bin/mplayer ]; then
   echo "cannot find mplayer."
   exit 1
 fi
 
-if [-x /usr/bin/avconv]; then
+if [ ! -x /usr/bin/avconv ]; then
   echo "cannot find avconv."
   exit 1
 fi
@@ -75,10 +75,11 @@ case $2 in
 *)
   echo "Specified duration $2 is invalid."
   echo "should be digits. from 1 to 999."
+  exit 4
   ;;
 esac
 
-if [ $# -ne 3]; then
+if [ $# -ne 3 ]; then
   # use default outfile
   OUTFILE=$1`date +"-\%Y-\%m-\%d-\%H-\%M.mp3"`
 else
