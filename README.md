@@ -60,9 +60,10 @@ Reference
 ---------
 
 Blogs
-http://www.senbero.com/?p=48
-http://n-sanawe.com/hm/?p=12
-http://ubuntu.futene.net/tips/radiru.html
+
+- http://www.senbero.com/?p=48
+- http://n-sanawe.com/hm/?p=12
+- http://ubuntu.futene.net/tips/radiru.html
 
 These radios are retrieved from following URLs.
 
