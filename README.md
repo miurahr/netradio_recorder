@@ -35,6 +35,16 @@ It was tested on following OS.
 - Linux Mint Petra (x86_64)
 
 
+Legal notice
+----------
+
+WARNING
+
+Radio programs are protected by copyright law.
+
+http://www3.nhk.or.jp/toppage/nhk_info/copyright.html
+http://www3.nhk.or.jp/netradio/faq.html
+
 Future plan
 ----------
 
