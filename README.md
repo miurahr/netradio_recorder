@@ -22,8 +22,8 @@ Command Usage
 Depenency
 -------
 
-mplayer:  retrieve radio stream from net urls
-ffmpeg:   convert radio stream to audio(mp3) format
+- mplayer:  retrieve radio stream from net urls
+- ffmpeg:   convert radio stream to audio(mp3) format
 
 
 Platform
@@ -38,7 +38,7 @@ It was tested on following OS.
 Future plan
 ----------
 
-=== Working with forked-daapd
+- Working with forked-daapd
 
 A Linux/FreeBSD DAAP (iTunes) media server with support
 for AirPlay devices, Apple Remote (and compatibles),
@@ -46,12 +46,12 @@ Spotify and internet radio.
 
   https://github.com/ejurgensen/forked-daapd
 
-=== cron runner script
+- cron runner script
 
 It parse schedule.csv file and run recorder
 and generate m3u file.
 
-=== rtmpdump instead of mplayer
+- rtmpdump instead of mplayer
 
 http://rtmpdump.mplayerhq.hu/
 
