@@ -1,27 +1,63 @@
 #!/bin/bash
 
-# check argument numbers
-if [ $# -ne 2 ]; then
-  echo "Not enough arguments specified"
+# Constants
+VERSION=0.1
+MPLAYER=/usr/bin/mplayer
+AVCONV=/usr/bin/avconv
+
+function show_version() {
+  echo "$0 version ${VERSION}"
+}
+
+function show_usage() {
   echo "Usage:"
-  echo "$0: (radio channel) (duration) [(outfile)]"
+  echo "$0: (radio channel) (duration) [(outfile.ext)]"
   echo " "
   echo "radio channel can be:"
   echo "  nhk1, nhk2, nhkfm"
   echo "  nhk1_tokyo, nhk1_osaka, nhk1_nagoya, nhk1_sendai"
   echo "  nhkfm_tokyo, nhkfm_osaka, nhkfm_nagoya, nhkfm_sendai"
+  echo " "
   echo "duration in minutes: 40, 15, .."
   echo "outfile default: channel-YYYY-mm-dd-HH-MM.mp3"
+  echo "ext can be: mp3, ogg, aac"
+  echo "output file format is detected by extension"
+}
+
+# check arguments 
+if [ $# -eq 1 ]; then
+  case $1 in
+    -h)
+      show_usage
+      ;;
+    -v)
+      show_version
+      ;;
+    *)
+      ;;
+  esac
+fi
+
+if [ $# -lt 3 ]; then
+  echo "Not enough arguments specified"
+  echo " "
+  show_usage
+  exit 2
+fi
+if [ $# -gt 4 ]; then
+  echo "Too many arguments specified"
+  echo " "
+  show_usage
   exit 2
 fi
 
-if [ ! -x /usr/bin/mplayer ]; then
-  echo "cannot find mplayer."
+if [ ! -x ${MPLAYER} ]; then
+  echo "cannot find ${MPLAYER}."
   exit 1
 fi
 
-if [ ! -x /usr/bin/avconv ]; then
-  echo "cannot find avconv."
+if [ ! -x ${AVCONV} ]; then
+  echo "cannot find ${AVCONV}."
   exit 1
 fi
 
@@ -85,7 +121,7 @@ if [ $# -ne 3 ]; then
 else
   OUTFILE=$3
 fi
-MPLAYER=/usr/bin/mplayer
+
 MPLAYER_OPT="-vo null -ao pcm:waveheader:fast:file=/dev/stdout -really-quiet"
-AVCONV=/usr/bin/avconv
+
 (sleep ${DURATION}; echo -n q ) | ${MPLAYER} -playlist ${RADIO_URL} ${MPLAYER_OPT} | ${AVCONV} -y -i - ${OUTFILE}
