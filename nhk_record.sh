@@ -11,7 +11,7 @@ function show_version() {
 
 function show_usage() {
   echo "Usage:"
-  echo "$0: (radio channel) (duration) [(outfile.ext)]"
+  echo "$0: (radio channel) (duration) [ (outfile.ext) | (output directory)]"
   echo " "
   echo "radio channel can be:"
   echo "  nhk1, nhk2, nhkfm"
@@ -22,6 +22,14 @@ function show_usage() {
   echo "outfile default: channel-YYYY-mm-dd-HH-MM.mp3"
   echo "ext can be: mp3, ogg, aac"
   echo "output file format is detected by extension"
+  echo " "
+  echo " examples:"
+  echo "    $0 nhk1 15 nhk.mp3"
+  echo "       record 15min from now and put nhk.mp3 on current directory."
+  echo " "
+  echo "    $0 nhk2 15 /srv/music/"
+  echo "       record 15min from now and put /srv/music/nhk2-YY-mm-dd-HH-MM.mp3 file."
+  echo " "
 }
 
 # check arguments 
@@ -119,7 +127,13 @@ if [ $# -ne 3 ]; then
   # use default outfile
   OUTFILE=$1`date +"-%Y-%m-%d-%H-%M.mp3"`
 else
-  OUTFILE=$3
+  if [ -d $3 ]; then
+    # specified directory for third argument
+    OUTFILE=$3/$1`date +"-%Y-%m-%d-%H-%M.mp3"`
+  else
+    # specified a filename
+    OUTFILE=$3
+  fi
 fi
 
 MPLAYER_OPT="-vo null -ao pcm:waveheader:fast:file=/dev/stdout -really-quiet"

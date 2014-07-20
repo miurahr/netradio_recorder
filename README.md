@@ -51,20 +51,25 @@ Please refer a documents follows:
 This script is released under GPL-3 license.
 Details are shown on COPYING file.
 
-Future plan
-----------
+Working with forked-daapd
+-----------------
 
-- Working with forked-daapd
-
-A Linux/FreeBSD DAAP (iTunes) media server with support
-for AirPlay devices, Apple Remote (and compatibles),
-Spotify and internet radio.
+forked-daapd is a Linux/FreeBSD DAAP (iTunes) media server with support
+for AirPlay devices, Apple Remote (and compatibles).
 
   https://github.com/ejurgensen/forked-daapd
 
+You can record radio and put into the folder such as /srv/music
+then daapd makes you able to listen it on Rythmbox or iTunes
+on your desktop.
+
+
+Future plan
+----------
+
 - cron runner script
 
-It parse schedule.csv file and run recorder
+It parse schedule.csv file, run recorder
 and generate m3u file.
 
 - rtmpdump instead of mplayer
